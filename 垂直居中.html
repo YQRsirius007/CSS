@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  .wrapper{
+    width:100px;
+    height: 100px;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+  }
+</style>
+<body>
+  <div style="background: #398dee;">
+    <span style="vertical-align: -10px;">负值</span>
+    x
+    <span style="vertical-align: 10px;">正值</span>
+  </div>
+  <div class="wrapper">
+    <span style="font-size:50px">x</span>
+    <span style="vertical-align: top;">123</span>
+  </div>
+  <script>
+    function fn(){
+      console.log(arguments, Array.isArray(arguments))
+      a([arguments])
+    }
+    function a(){
+      console.log(arguments,Array.isArray(arguments))
+    }
+    fn(1,2,3)
+  </script>
+</body>
+</html>

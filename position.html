@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+div.static{
+    border:10px solid  black;
+}
+div.fixed{
+    width:50px;
+    position:fixed;
+    top:30px;
+    right:5px;
+    border:2px solid royalblue;
+    color: red;
+}
+div.relative{
+    position:relative;
+    border:10px solid olive;
+    top:10px;
+}
+div.absolute{
+    position:absolute;
+    border:10px solid saddlebrown;
+    top:15px;
+}
+</style>
+<body>
+    <div class="static">
+        static
+    </div>
+    <div class="fixed">
+        fixed
+    </div>
+    <div class="relative">
+        relative
+    </div>
+    <div class="absolute">
+        absolute
+    </div>
+    <script>
+/**
+ * @param {String}  msg    错误信息
+ * @param {String}  url    出错文件
+ * @param {Number}  row    行号
+ * @param {Number}  col    列号
+ * @param {Object}  error  错误详细信息
+ */
+window.onerror = function (msg, url, row, col, error) {
+    console.log('onerror 错误信息 ↙');
+    console.log({
+        msg,  url,  row, col, error
+    })
+};
+
+function report(msg, level) {
+    var reportUrl = "http://localhost:8055/report";
+    new Image().src = reportUrl + '?msg=' + msg;
+}
+
+
+    </script>
+    
+</body>
+</html>
