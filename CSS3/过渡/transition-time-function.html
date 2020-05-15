@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0px;
+        padding:0px;
+    }
+    .wrapper{
+        width:100px;
+        height: 100px;
+        background-color: aqua;
+        transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        /* cubic-bezier() */
+        /* ease-in-out
+        ease-out
+        ease-in */
+        /* ease; 先慢后快*/
+        /* linear; 一个速度*/
+    }
+    .wrapper:hover{
+        width:300px;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="cube"></div>
+    </div>
+</body>
+</html>

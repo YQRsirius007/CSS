@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .wrapper{
+            width:100px;
+            height: 100;
+            background-color: aquamarine;
+            animation: changeBackgroundk 3s;
+            -webkit-animation: changeBackground 3s;
+        }
+        /* @keyframes changeBak{
+            from{background-color: aquamarine;}
+            to{background-color: blue;}
+        } */
+        @keyframes changeBackground{
+            0% {background-color: aquamarine;}
+            25% {background-color: red};
+            50% {background-color: cyan};
+            100% {background-color: darkblue};
+        }
+        @-webkit-keyframes changeBackground{
+            0% {background-color: aquamarine;}
+            25% {background-color: cornflowerblue};
+            50% {background-color: cyan};
+            100% {background-color: darkblue};
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">1</div>
+    
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+			margin: 0;
+			padding:0;
+		}
+		html,body{
+			font-size: 80px;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+
+		}
+		.wrapper{
+			background-color: #222;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			perspective: 10000px;
+		}
+		.cube{
+			width: 2rem;
+			height: 2rem;
+			background-color: #eee;
+			position: relative;
+			transform-style: preserve-3d;
+			transform: rotateX(-40deg) rotateY(32deg);
+		}
+		.side{
+			position: absolute;
+			top:0;
+			left: 0;
+			width: 2rem;
+			height: 2rem;
+			background-color: rgba(255, 99, 71, 0);
+			transition: 2s all ease;
+		}
+		.front {
+		  transform: translateZ(1rem);
+		}
+		.top {
+		  transform: rotateX(90deg) translateZ(1rem);
+		}
+		.right {
+    	transform: rotateY(90deg) translateZ(1rem);
+		}
+		.left {
+    	transform: rotateY(-90deg) translateZ(1rem);
+		}
+		.bottom {
+		  transform: rotateX(-90deg) translateZ(1rem);
+		}
+
+		.back {
+		  transform: rotateY(-180deg) translateZ(1rem);
+		}
+
+		.ctrl{
+			width: 100%;
+			padding: 20px 20px;
+			font-size: 16px;
+			background-color: #999;
+		}
+		.about{
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			position: absolute;
+			bottom: 10px;
+			font-size: 16px;
+			color: #f8f8f8;
+		}
+        .big_box{   
+            width: 500px;   
+            height: 500px;   
+            margin: 200px auto;   
+        }   
+  
+        .box{   
+            -webkit-transform-style: preserve-3d;   
+            -moz-transform-style: preserve-3d;   
+            -ms-transform-style: preserve-3d;   
+            transform-style: preserve-3d;   
+            transform-origin:100px 100px 00px;   
+            position: relative;   
+            transform: rotatex(0deg) rotatey(0deg) rotatez(0deg)scale3d(0.7,0.7,0.7);   
+        }   
+        .box span{   
+            transition: all 1s linear;   
+  
+        }   
+        span{   
+            display: block;   
+            position: absolute;   
+            width: 200px;   
+            height: 200px;   
+            box-sizing: border-box;   
+            border:1px solid black;   
+            /*opacity: 0.7;*/  
+            text-align: center;   
+            line-height: 200px;   
+            font-size: 60px;   
+            font-weight: 700;   
+            border-radius: 12%;   
+  
+        }   
+        .box span:nth-child(1){   
+            background-color: deepskyblue;   
+            transform-origin: left;   
+            transform: rotatey(-90deg) translatex(-100px); 
+        }   
+        .box span:nth-child(2){   
+            background-color: red;   
+            transform-origin: rightright;   
+            transform: rotatey(90deg) translatex(100px) ;
+        }   
+  
+        .box span:nth-child(3){   
+            background-color: green;   
+            transform-origin: top;   
+            transform: rotatex(90deg) translatey(-100px) ; 
+  
+        }   
+        .box span:nth-child(4){   
+            background-color: #6633FF;   
+            transform-origin: bottombottom;   
+            transform: rotatex(-90deg) translatey(100px);
+        }   
+        .box span:nth-child(5){   
+            background-color: gold;  
+            transform: translatez(-100px);
+        }   
+        .box span:nth-child(6){   
+  
+            background-color: #122b40;   
+            transform: translatez(100px); 
+        }   
+        .box:hover span{   
+  
+            opacity: 0.3;   
+        }   
+        .box:hover{   
+            animation-play-state:paused;  
+        }   
+    </style>
+</head>
+<body>
+
+        <div class="wrapper w2">
+                <div class="cube" id="mycube">
+                正面
+                    <div class="side  front">
+                    <!-- 1 -->
+                        <div class="first_face">
+                                  <span class="pip"></span>
+                      </div>
+                    </div>
+                    <div class="side   back">
+                    <!-- 6 -->
+                        <div class="sixth_face">
+                                  <div class="column">
+                                      <span class="pip"></span>
+                                      <span class="pip"></span>
+                                      <span class="pip"></span>
+                                  </div>
+                                  <div class="column">
+                                      <span class="pip"></span>
+                                      <span class="pip"></span>
+                                      <span class="pip"></span>
+                                  </div>
+                      </div>
+                    </div>
+                    <div class="side  right">
+                    <!-- 4 -->
+                        <div class="forth_face">
+                                  <div class="column">
+                                      <span class="pip"></span>
+                                      <span class="pip"></span>
+                                  </div>
+                                  <div class="column">
+                                      <span class="pip"></span>
+                                      <span class="pip"></span>
+                                  </div>
+                              </div>
+                    </div>
+                    <div class="side   left">
+                    <!-- 3 -->
+                        <div class="third_face">
+                                  <span class="pip flex_start"></span>
+                                  <span class="pip"></span>
+                                  <span class="pip flex_end"></span>
+                              </div>
+                    </div>
+                    <div class="side    top">
+                    <!-- 5 -->
+                        <div class="fifth_face">
+                                  <div class="column">
+                                      <span class="pip flex_end"></span>
+                                      <span class="pip flex_end"></span>
+                                  </div>
+                                  <div class="column">
+                                      <span class="pip center"></span>
+                                  </div>
+                                  <div class="column">
+                                      <span class="pip flex_start"></span>
+                                      <span class="pip flex_start"></span>
+                                  </div>
+                              </div>
+                    </div>
+                    <div class="side bottom">
+                    <!-- 2 -->
+                        <div class="second_face">
+                                  <span class="pip flex_start"></span>
+                                  <span class="pip flex_end"></span>
+                              </div>
+                    </div>
+                </div>
+              </div>
+    
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .container {
+            width: 200px;
+            height: 200px;
+            margin: 75px 0 0 75px;
+            border: none;
+        }
+
+        .cube {
+            width: 100%;
+            height: 100%;
+            backface-visibility: visible;
+            perspective-origin: 150% 150%;
+            transform-origin: 50% 50% -100px;
+            /* transform-style: perserve-3d; */
+            transform-style:preserve-3d; 
+             /*使其子元素保持3D转换*/
+            /* -webkit-transform-style:preserve-3d;
+            -moz-transform-style:preserve-3d; */
+        }
+        .pers500 {
+            perspective: 500px;
+        }
+
+        .face {
+            position: absolute;
+            display: block;
+            width: 100px;
+            height: 100px;
+            border: none;
+            font-family: sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        .front {
+            background: gray;
+            transform: translateZ(50px);
+        }
+
+        .back {
+            background-color: blueviolet;
+            transform: rotateY(180deg) translateZ(50px);
+        }
+
+        .right {
+            background-color: aquamarine;
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+
+        .left {
+            background-color: aquamarine;
+            transform: rotateY(90deg) translateZ(50px);
+        }
+
+        .top {
+            background: rgba(196, 196, 0, 0.7);
+            transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .bottom {
+            background-color: black;
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="cube pers500" id="mycube">
+            <div class="face front">1</div>
+            <div class="face back">2</div>
+            <div class="face right">3</div>
+            <div class="face left">4</div>
+            <div class="face top">5</div>
+            <div class="face bottom">6</div>
+
+        </div>
+    </div>
+    <div>
+        <button onclick="random()">掷骰子</button>
+    </div>
+
+    <script>
+        var cube = document.getElementById("mycube");
+        // function random(){
+        //    console.log("random");
+        //    cube.style.transition="2s all ease-in-out";
+        //    cube.style.transform="rotateX("+random(7000,9000)+"deg) rotateY("+random(7000 ,9000)+"deg) rotateZ("+random(7000,9000)+"deg) scale3d(1,1,1)";
+        //    setTimeout(()=>{
+        //        cube.style.transition="none";
+        //    },2000);
+        // }
+        function random() {
+            console.log("random");
+            cube.style.transition = "2s all ease-in-out"
+            cube.style.transform = "rotatex(" + getRandom(7000, 14000) + "deg) rotatey(" + getRandom(7000, 14000) +
+                "deg) rotatez(" + getRandom(7000, 14000) + "deg)scale3d(1,1,1)"
+            setTimeout(() => {
+                cube.style.transition = "none"
+            }, 2000)
+        }
+
+        function getRandom(min, max) {
+            var num = Math.floor(Math.random() * (max - min) + min)
+            return num - num % 90 + 5
+        }
+    </script>
+</body>
+
+</html>

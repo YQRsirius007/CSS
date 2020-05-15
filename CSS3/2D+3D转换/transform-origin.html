@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0px;
+        padding: 0px;
+    }
+    .wrapper{
+        display: flex;
+        width:130px;
+        height: 100px;
+        border:1px solid black;
+        /* justify-content: center;
+        align-items: center; */
+    }
+    .cube1{
+        position:absolute;
+        top:0px;
+        left:50px;
+        width:50px;
+        height: 100px;
+        border-radius: 50px 50px 0 0;
+        transform: rotate(-45deg); 
+        transform-origin: 0 100%;   
+        /* 旋转基准点 */
+         /* left; */
+        background-color: blue;
+    }
+    .cube2{
+        position:absolute;
+        top:0px;
+        left:0px;
+        width:50px;
+        height: 100px;
+        border-radius: 50px 50px 0 0;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+         /* left; */
+        background-color: red;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="cube1"></div>
+        <div class="cube2"></div>
+    </div>
+</body>
+</html>
